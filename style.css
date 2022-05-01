@@ -1,0 +1,18 @@
+#container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+[id^="row"] {
+    display: flex;
+    width: 940px;
+    background-color: #999;
+}
+
+[id^="squareBox"] {
+    aspect-ratio: auto 1/1;
+    width: 100%;
+    margin: 2px;
+    background-color: rgb(227, 227, 227)
+}
