@@ -1,18 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@600&display=swap');
+
+* {
+    font-family: 'Vazirmatn', sans-serif;
+    color: white;
+}
+
 #container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
 }
 
 [id^="row"] {
     display: flex;
-    width: 940px;
+    width: 600px;
     background-color: #999;
 }
 
-[id^="squareBox"] {
+.squareBox {
     aspect-ratio: auto 1/1;
     width: 100%;
-    margin: 2px;
+    margin: 1px;
     background-color: rgb(227, 227, 227)
+}
+
+button {
+    background-color: rgb(28, 90, 223);
+    margin: 20px 15px;
+    display: inline;
+    border: 0px solid #000;
+    border-radius: 10px;
+    aspect-ratio: auto 2/1;
+    text-transform: uppercase;
+    height: 40px;
 }
