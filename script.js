@@ -28,7 +28,10 @@ function createGrid(rows) {
             const squareBox = document.createElement('div');
             squareBox.setAttribute('class', `squareBox`);
             row.appendChild(squareBox);
-            squareBox.addEventListener('mouseover touchmove', () => {
+            squareBox.addEventListener('mouseover', () => {
+                squareBox.style.backgroundColor = '#000000';
+            })
+            squareBox.addEventListener('touchmove', () => {
                 squareBox.style.backgroundColor = '#000000';
             })
         }
