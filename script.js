@@ -30,10 +30,7 @@ function createGrid(rows) {
             row.appendChild(squareBox);
             squareBox.addEventListener('mouseover', () => {
                 squareBox.style.backgroundColor = '#000000';
-            })
-            squareBox.addEventListener('touchmove', () => {
-                squareBox.style.backgroundColor = '#000000';
-            })
+            });
         }
     }
 }
