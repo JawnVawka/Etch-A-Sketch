@@ -18,6 +18,19 @@ function resizeGrid() {
     createGrid(sliderValue);
 }
 
+function toggleColorMode(button) {
+    const getBtnValue = button.value;
+    if (getBtnValue === 'normal') {
+        return btnValue = 'normal';
+    } else if (getBtnValue === 'random') {
+        return btnValue = 'random';
+    }
+}
+
+function getRandomNum() { // gets random number to use to randomly pick a color for squares when moused over
+    return Math.floor(Math.random() * 256);
+}
+
 function createGrid(rows) {
     for (i = 1; i <= rows; i++) {
         const row = document.createElement('div');
@@ -28,8 +41,14 @@ function createGrid(rows) {
             const squareBox = document.createElement('div');
             squareBox.setAttribute('class', `squareBox`);
             row.appendChild(squareBox);
+
+            // This changes the colors of the squares when moused over
             squareBox.addEventListener('mouseover', () => {
-                squareBox.style.backgroundColor = '#000000';
+                if (btnValue === 'normal') {
+                    squareBox.style.backgroundColor = 'rgb(0, 0, 0)';
+                } else if (btnValue === 'random') {
+                    squareBox.style.backgroundColor = `rgb(${getRandomNum()}, ${getRandomNum()}, ${getRandomNum()})`;
+                }
             });
         }
     }
@@ -39,6 +58,7 @@ const containerDiv = document.getElementById('container');
 const clearBtn = document.getElementById('clear');
 let slider = document.getElementById('myRange');
 let sliderValue = slider.value;
+let btnValue = 'normal';
 
 slider.addEventListener('input', resizeGrid);
 clearBtn.addEventListener('click', eraseGrid);
